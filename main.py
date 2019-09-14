@@ -17,10 +17,8 @@ csv_file = open("./japanese.csv", "r")
 
 romaji_list = []
 for row in csv.reader(csv_file):
-    for word in row:
-        if len(word) != 0:
-            word = mojimoji.han_to_zen(word,ascii=False)
-            romaji_list.append(conv.do(word)) 
+            word = mojimoji.han_to_zen(row[1],ascii=False)
+            romaji_list.append(conv.do(row[1])) 
 
 # 最初の行を削除
 del romaji_list[0]
